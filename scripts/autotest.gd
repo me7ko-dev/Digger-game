@@ -34,6 +34,8 @@ func _ready() -> void:
 	ex = main.excavator
 	_shots = DisplayServer.get_name() != "headless"
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://_autotest"))
+	# Godot да не внася снимките в играта
+	FileAccess.open(ProjectSettings.globalize_path("res://_autotest/.gdignore"), FileAccess.WRITE)
 	_run()
 
 

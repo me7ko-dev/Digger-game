@@ -34,7 +34,7 @@ func _ready() -> void:
 	_message = _centered(_label("", 44), 90.0)
 
 	if not (force_touch or DisplayServer.is_touchscreen_available()):
-		var hint := _label("W/S/A/D: вериги   ← →: кабина   ↑ ↓: стрела   Q/E: рамо навън/навътре\nZ: кофата гребе   X: кофата изсипва   V: камера   R: отначало", 16)
+		var hint := _label("W/S/A/D: вериги   стрелки наляво/надясно: кабина   нагоре/надолу: стрела\nQ/E: рамо навън/навътре   Z: кофата гребе   X: кофата изсипва   V: камера   R: отначало", 16)
 		hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		hint.position = Vector2(16, 12)
 		add_child(hint)
@@ -43,12 +43,12 @@ func _ready() -> void:
 	var tex := _square_texture(0.22)
 	var tex_pressed := _square_texture(0.5)
 	for def in [
-		["drive_fwd", "▲"], ["drive_back", "▼"], ["turn_left", "◀"], ["turn_right", "▶"],
-		["swing_left", "⟲\nкабина"], ["swing_right", "⟳\nкабина"],
-		["boom_up", "стрела\n▲"], ["boom_down", "стрела\n▼"],
+		["drive_fwd", "напред"], ["drive_back", "назад"], ["turn_left", "завой\nляво"], ["turn_right", "завой\nдясно"],
+		["swing_left", "кабина\nналяво"], ["swing_right", "кабина\nнадясно"],
+		["boom_up", "стрела\nгоре"], ["boom_down", "стрела\nдолу"],
 		["stick_out", "рамо\nнавън"], ["stick_in", "рамо\nнавътре"],
 		["bucket_curl", "кофа\nгребе"], ["bucket_dump", "кофа\nизсипва"],
-		["restart", "↺"], ["camera", "камера"],
+		["restart", "отначало"], ["camera", "камера"],
 	]:
 		var b := TouchScreenButton.new()
 		b.texture_normal = tex
@@ -69,7 +69,7 @@ func _ready() -> void:
 		_buttons[def[0]] = b
 	for small in ["restart", "camera"]:
 		_buttons[small].scale = Vector2(0.6, 0.6)
-		_buttons[small].get_child(0).add_theme_font_size_override("font_size", 30)
+		_buttons[small].get_child(0).add_theme_font_size_override("font_size", 26)
 
 	get_viewport().size_changed.connect(_layout)
 	_layout()
