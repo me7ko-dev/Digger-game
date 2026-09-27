@@ -1,0 +1,27 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="Digger Game"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.7", "Mobile")
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[physics]
+
+common/physics_jitter_fix=0.0
+common/physics_interpolation=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
