@@ -16,7 +16,16 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=4
 
+[layer_names]
+
+3d_physics/layer_1="ground"
+3d_physics/layer_2="obstacles"
+3d_physics/layer_3="excavator"
+3d_physics/layer_4="sand"
+
 [physics]
+
+3d/physics_engine="Jolt Physics"
 
 common/physics_jitter_fix=0.0
 common/physics_interpolation=true

@@ -1,29 +1,6 @@
 [gd_scene format=3]
 
-[sub_resource type="Environment" id="Environment_1"]
-background_mode = 1
-background_color = Color(0.55, 0.72, 0.9, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.7, 0.75, 0.8, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_1"]
-size = Vector2(40, 40)
-
-[sub_resource type="StandardMaterial3D" id="Mat_sand"]
-albedo_color = Color(0.82, 0.7, 0.48, 1)
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
 
 [node name="Main" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1")
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 10, 0)
-shadow_enabled = true
-
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_1")
-surface_material_override/0 = SubResource("Mat_sand")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 8, 14)
+script = ExtResource("1")
