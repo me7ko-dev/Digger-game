@@ -9,6 +9,7 @@ extends Camera3D
 @export var turn_smoothing := 3.0
 
 var target: Node3D   ## багерът
+var ground: Callable ## (Vector3) -> височина на земята; камерата не влиза под нея
 var side_view := false
 var _yaw := 0.0
 
@@ -53,5 +54,7 @@ func _place(k: float) -> void:
 		pos = focus + left * side_distance + Vector3.UP * 2.0
 	else:
 		pos = origin - fwd * distance + left * side_offset + Vector3.UP * height
+	if ground.is_valid():
+		pos.y = maxf(pos.y, ground.call(pos) + 1.2)
 	global_position = global_position.lerp(pos, k)
 	look_at(focus)

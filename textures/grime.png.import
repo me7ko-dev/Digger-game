@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbiw02n8a5h1f"
-path="res://.godot/imported/sky.hdr-b9fd0fa1779ab12fc0d03cd056239a39.ctex"
+uid="uid://cyl3lyo6dcwl1"
+path="res://.godot/imported/grime.png-ec2abcf5409a4dfc11e893f90d242fd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://env/sky.hdr"
-dest_files=["res://.godot/imported/sky.hdr-b9fd0fa1779ab12fc0d03cd056239a39.ctex"]
+source_file="res://textures/grime.png"
+dest_files=["res://.godot/imported/grime.png-ec2abcf5409a4dfc11e893f90d242fd9.ctex"]
 
 [params]
 

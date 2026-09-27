@@ -87,8 +87,9 @@ func show_message(text: String, stay := false) -> void:
 		_tween.tween_property(_message, "modulate:a", 0.0, 0.5)
 
 
-func set_truck(amount: int, goal: int) -> void:
-	_truck.text = "Камион: %d%%" % mini(100, roundi(100.0 * amount / goal))
+## part: колко е пълен камионът (0..1)
+func set_truck(part: float) -> void:
+	_truck.text = "Камион: %d%%" % mini(100, roundi(100.0 * part))
 
 
 func set_bucket(fill: float) -> void:
